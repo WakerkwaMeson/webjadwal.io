@@ -1,0 +1,183 @@
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0c0a1e;
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.1) 1px, transparent 0);
+            background-size: 2rem 2rem;
+            color: #e0e0e0;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #38bdf8; /* light blue */
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.5); /* bg-gray-900 with opacity */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-border {
+            box-shadow: 0 0 15px rgba(56, 189, 248, 0.4), 0 0 30px rgba(56, 189, 248, 0.3);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, #38bdf8, #a78bfa);
+            border-radius: 2px;
+        }
+        /* Scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        .table-custom th, .table-custom td {
+            padding: 12px 15px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .table-custom thead th {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+        }
+        .table-custom tbody tr {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .table-custom tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        /* tabel biodata */
+        .biodata-container {
+    display: flex;
+    background-color: #2a2a4a; /* Warna latar belakang kontainer */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    max-width: 900px;
+    width: 100%;
+    gap: 40px; /* Jarak antara kolom info dan foto */
+    border: 1px solid #00f0ff; /* Border neon */
+    box-shadow: 0 0 15px #00f0ff; /* Efek cahaya neon */
+}
+
+.info-section {
+    flex: 2; /* Mengambil lebih banyak ruang */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: baseline; /* Menyelaraskan teks secara horizontal */
+    margin-bottom: 15px;
+}
+
+.label {
+    font-weight: bold;
+    color: #00f0ff; /* Warna label neon */
+    min-width: 150px; /* Lebar minimum untuk label agar rapi */
+    font-size: 1.1em;
+}
+
+.separator {
+    color: #e0e0e0;
+    margin: 0 10px;
+    font-size: 1.1em;
+}
+
+.value {
+    color: #90ee90; /* Warna nilai data */
+    flex-grow: 1;
+    font-size: 1.1em;
+    line-height: 1.4;
+}
+
+.photo-section {
+    flex: 1; /* Mengambil lebih sedikit ruang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-frame {
+    border: 3px solid #00f0ff; /* Border foto neon */
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 0 0 15px #00f0ff, 0 0 30px rgba(0, 240, 255, 0.5); /* Efek cahaya neon pada frame */
+    overflow: hidden; /* Pastikan gambar tidak melebihi frame */
+}
+
+.profile-photo {
+    width: 200px; /* Sesuaikan lebar gambar */
+    height: 250px; /* Sesuaikan tinggi gambar */
+    object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+    display: block; /* Menghilangkan ruang ekstra di bawah gambar */
+    border-radius: 5px; /* Sedikit radius pada gambar itu sendiri */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .biodata-container {
+        flex-direction: column; /* Ubah tata letak menjadi kolom */
+        align-items: center;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .photo-section {
+        order: -1; /* Pindahkan foto ke atas pada layar kecil */
+        margin-bottom: 20px;
+    }
+
+    .label {
+        min-width: 120px;
+        font-size: 1em;
+    }
+
+    .value {
+        font-size: 1em;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .biodata-container {
+        padding: 15px;
+    }
+
+    .label, .separator, .value {
+        font-size: 0.9em;
+    }
+
+    .profile-photo {
+        width: 120px;
+        height: 160px;
+    }
+}
+

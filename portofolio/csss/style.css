@@ -1,0 +1,36 @@
+/* ... (kode CSS yang sudah ada) ... */
+
+/* Animasi Fade In & Slide Up */
+.fade-in-slide-up {
+    opacity: 0;
+    transform: translateY(50px); /* Geser ke bawah 50px awalnya */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Transisi untuk animasi */
+}
+
+/* Kelas ini akan ditambahkan oleh JavaScript saat elemen terlihat */
+.fade-in-slide-up.visible {
+    opacity: 1;
+    transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+/* Animasi Fade In & Slide Right (untuk elemen di kanan) */
+.fade-in-slide-right {
+    opacity: 0;
+    transform: translateX(50px); /* Geser ke kanan 50px awalnya */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animasi Fade In (untuk logo atau footer) */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
